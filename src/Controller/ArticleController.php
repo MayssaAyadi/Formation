@@ -22,7 +22,7 @@ class ArticleController extends AbstractController
      */
     public function show($slug, SlackClient $slack, EntityManagerInterface $em)
     {
-        if ($slug === 'why-asteroids-taste-like-bacon-') {
+        if ($slug === 'khaaaaan') {
             $slack->sendMessage('Kahn', 'Ah, Kirk, my old friend...');
         }
 
