@@ -88,6 +88,12 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.4"
     },
+    "imagine/imagine": {
+        "version": "1.2.4"
+    },
+    "knplabs/knp-markdown-bundle": {
+        "version": "1.9.0"
+    },
     "knplabs/knp-time-bundle": {
         "version": "v1.16.0"
     },
@@ -99,6 +105,18 @@
     },
     "laminas/laminas-zendframework-bridge": {
         "version": "1.2.0"
+    },
+    "liip/imagine-bundle": {
+        "version": "1.8",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.8",
+            "ref": "5a5bdc2d0e2533ed6935d5ae562f2b318a8fc1ee"
+        }
+    },
+    "michelf/php-markdown": {
+        "version": "1.9.0"
     },
     "monolog/monolog": {
         "version": "2.2.0"
