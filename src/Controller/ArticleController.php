@@ -15,14 +15,27 @@ use Twig\Environment;
 
 class ArticleController extends AbstractController
 {
-       
+   
+
+    /**
+     * @Route("/", name="app_homepage")
+     */
+    public function homepage(EntityManagerInterface $em)
+    {
+        $repository = $em->getRepository(Article::class);
+        $articles = $repository->findBy([], ['publishedAt' => 'DESC']);
+
+        return $this->render('article/homepage.html.twig', [
+            'articles' => $articles,
+        ]);
+    }
 
     /**
      * @Route("/news/{slug}", name="article_show")
      */
     public function show($slug, SlackClient $slack, EntityManagerInterface $em)
     {
-        if ($slug === 'khaaaaan') {
+        if ($slug === 'khaaaaaan') {
             $slack->sendMessage('Kahn', 'Ah, Kirk, my old friend...');
         }
 
@@ -33,7 +46,6 @@ class ArticleController extends AbstractController
             throw $this->createNotFoundException(sprintf('No article for slug "%s"', $slug));
         }
 
-        //dump($article);die;
         $comments = [
             'I ate a normal rock once. It did NOT taste like bacon!',
             'Woohoo! I\'m going on an all-asteroid diet!',
